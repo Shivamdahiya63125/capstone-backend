@@ -59,7 +59,7 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
-  res.setHeader("Access-Control-Allow-Origin", "*");
+
   const user = await User.findOne({ email }).populate("listedProducts");
   // console.log(email, password);
   // console.log(await bcrypt.compare(password, user.password));
